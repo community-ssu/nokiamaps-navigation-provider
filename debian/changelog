@@ -1,0 +1,222 @@
+nokiamaps-navigation-provider (0.200-1+0m5) unstable; urgency=low
+
+  * First FOSS release
+
+ -- Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>  Fri, 26 Sep 2014 17:18:51 +0300
+
+nokiamaps-navigation-provider (0.109-3+0m5) lucid; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    version has been changed to 0.109-3+0m5
+
+ -- Balaji Ramamurthy <ext-balaji.ramamurthy@nokia.com>  Thu, 24 Jun 2010 12:50:04 +0300
+
+nokiamaps-navigation-provider (0.109-3) lucid; urgency=low
+
+  * Fixes: NB#175345 - nokiamaps-navigation-provider needs to be integrated to
+    PE1
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 23 Jun 2010 14:43:19 +0300
+
+nokiamaps-navigation-provider (0.109-2) lucid; urgency=low
+
+  * Removed unnecessary dependecy for settings package
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 14 Jun 2010 15:33:30 +0300
+
+nokiamaps-navigation-provider (0.109-1) lucid; urgency=low
+
+  * Error in geo-tagging feature where it shows Taiwan as Province of China in
+    camera.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 14 Jun 2010 11:07:04 +0300
+
+nokiamaps-navigation-provider (0.108-1) unstable; urgency=low
+
+  * Fixes: NB#156190 -  Infinite loop when trying to open a contact address
+    without internet connectivity
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 11 Feb 2010 13:00:32 +0200
+
+nokiamaps-navigation-provider (0.107-1) unstable; urgency=low
+
+  * Fixes: NB#139418 - Authentication token needs to be taken into use when
+    using REST server
+  * Added support for possible new XML response format
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Fri, 08 Jan 2010 15:32:49 +0200
+
+nokiamaps-navigation-provider (0.106-1) unstable; urgency=low
+
+  * Fixes: NB#138544 - Location-related componets are spamming syslog
+  * Fixed memory leak
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Oct, 13 Sep 2009 19:01:32 +0300
+
+nokiamaps-navigation-provider (0.105-1) unstable; urgency=low
+
+  * Fixes: NB#128775 - sometimes "select connection" dialog is poped up
+    repeatedly if none is selected, refraining the usage of camera app
+  * Fixes: NB#139418 - Authentication token needs to be taken into use when
+    using REST server
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 21 Sep 2009 13:17:11 +0300
+
+nokiamaps-navigation-provider (0.104-1) unstable; urgency=low
+
+  * Fixes: NB#128775 - sometimes "select connection" dialog is poped up
+    repeatedly if none is selected, refraining the usage of camera app
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Tue, 01 Sep 2009 16:43:57 +0300
+
+nokiamaps-navigation-provider (0.103-1) unstable; urgency=low
+
+  * Fixes: NB#127166 - resolving long/lat does not use enough caching, and also
+    insists on network connection
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 22 Jul 2009 14:50:56 +0300
+
+nokiamaps-navigation-provider (0.102-1) unstable; urgency=low
+
+  * Moved libconic handling to worker thread to prevent possible deadlock.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 18 Jun 2009 12:25:57 +0300
+
+nokiamaps-navigation-provider (0.101-1) unstable; urgency=low
+
+  * Updated to use new map tile api.
+  * Added local cache for map tiles.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 11 Jun 2009 08:42:14 +0300
+
+nokiamaps-navigation-provider (0.100-1) unstable; urgency=low
+
+  * Fixed reverse geocoding address parsing
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 30 Apr 2009 09:23:41 +0300
+
+nokiamaps-navigation-provider (0.99-1) unstable; urgency=low
+
+  * Fixed some memory leaks.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Fri, 17 Apr 2009 13:34:55 +0300
+
+nokiamaps-navigation-provider (0.98-2) unstable; urgency=low
+
+  * Fixed debian dependencies
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 09 Apr 2009 12:09:26 +0300
+
+nokiamaps-navigation-provider (0.98-1) unstable; urgency=low
+
+  * Added checking for offline mode.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 02 Apr 2009 10:40:56 +0300
+
+nokiamaps-navigation-provider (0.97-1) unstable; urgency=low
+
+  * Refactoring and code cleanup.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 16 Feb 2009 13:00:16 +0200
+
+nokiamaps-navigation-provider (0.96-1) unstable; urgency=low
+
+  * Added support of missing Show*, GetPOICategories and GetLocationFromMap methods.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 14 Jan 2009 17:52:59 +0200
+
+nokiamaps-navigation-provider (0.95-2) unstable; urgency=low
+
+  * Added libconic to debian dependecies.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 08 Jan 2009 10:21:49 +0200
+
+nokiamaps-navigation-provider (0.95-1) unstable; urgency=low
+
+  * Added support for getting map tile.
+  * Updated D-Bus api to match new libnavigation.
+  * Added support for newtwork connection opening.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 07 Jan 2009 13:05:34 +0200
+
+nokiamaps-navigation-provider (0.94-2) unstable; urgency=low
+
+  Fixes: NB#95447 - Map provider D-Bus service file is not installed
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 17 Dec 2008 13:44:25 +0200
+
+nokiamaps-navigation-provider (0.94-1) unstable; urgency=low
+
+  * Fix for NB#95447.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Fri, 12 Dec 2008 15:02:19 +0200
+
+nokiamaps-navigation-provider (0.93-1) unstable; urgency=low
+
+  * New version that does not user libngeo anymore.
+  * Fixed geocoding and reverse geocoding to get results from real server.
+  * Other functions than geocoding and reverse geocoding only return static
+    data for testing.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 06 Oct 2008 11:12:37 +0300
+
+nokiamaps-navigation-provider (0.92-1) unstable; urgency=low
+
+  * Added support for converting pixel coordinates to geographical coordinates
+    and vice versa.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Tue, 15 Jul 2008 15:50:38 +0300
+
+nokiamaps-navigation-provider (0.91-1) unstable; urgency=low
+
+  * Geocoding and reverse geocoding can now return multiple results.
+  * nokiamaps-navigation-provider now depends on libngeo0 or
+    nokia-maps-unified (>= 0.5.0).
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Wed, 09 Jul 2008 15:33:04 +0300
+
+nokiamaps-navigation-provider (0.90-2) unstable; urgency=low
+
+  * Updated rules to run autogen.sh.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Tue, 08 Jul 2008 13:49:26 +0300
+
+nokiamaps-navigation-provider (0.90-1) unstable; urgency=low
+
+  * Updated packaging for the baseline release.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 07 Jul 2008 15:21:37 +0300
+
+nokiamaps-navigation-provider (0.1.4) unstable; urgency=low
+
+  * Provider now exits if network operation times out. This should
+    work around the "started too early" issue.
+  * nm-nav-provider now exists after being idle for certain amount
+    of time.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Mon, 30 Jun 2008 14:26:21 +0300
+
+nokiamaps-navigation-provider (0.1.3) unstable; urgency=low
+
+  * Now suggests nokia-maps-ui instead of depends on nokia-maps.
+  * Build depends on libngeo-dev.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Fri, 27 Jun 2008 17:37:11 +0300
+
+nokiamaps-navigation-provider (0.1.2) unstable; urgency=low
+
+  * Now depends on nokia-maps and provides navigation-provider.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Tue, 17 Jun 2008 15:22:22 +0300
+
+nokiamaps-navigation-provider (0.1.1) unstable; urgency=low
+
+  * Download data online.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Thu, 29 May 2008 15:51:41 +0300
+
+nokiamaps-navigation-provider (0.1.0) unstable; urgency=low
+
+  * Initial release, split from libnavigation package.
+
+ -- Quanyi Sun <Quanyi.Sun@nokia.com>  Tue, 20 May 2008 17:00:50 +0300

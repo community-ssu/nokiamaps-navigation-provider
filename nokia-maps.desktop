@@ -1,0 +1,4 @@
+[Map service]
+Name=Nokia Maps
+Service=com.nokia.Navigation.NokiaMapsProvider
+Description=Nokia Maps

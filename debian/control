@@ -1,0 +1,24 @@
+Source: nokiamaps-navigation-provider
+Section: libs
+Priority: optional
+Build-Depends: libconic0-dev, libdbus-glib-1-dev, libgconf2-dev, liblocation-dev, libnavigation-dev, libxml2-dev
+Maintainer: Ivaylo Dimitrv <freemangordon@abv.bg>
+
+Package: nokiamaps-navigation-provider
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}
+Suggests: nokia-maps-ui
+Conflicts: navigation-provider
+Provides: navigation-provider
+Description: Navigation provider using Nokia Maps beta for Maemo
+ Navigation provider for Map & Navigation library using
+ Nokia Maps beta for Maemo
+
+Package: nokiamaps-navigation-provider-dbg
+Architecture: any
+Section: devel
+Depends: nokiamaps-navigation-provider (= ${binary:Version})
+Description: Navigation provider using Nokia Maps beta for Maemo - debug symbols
+ Navigation provider for Map & Navigation library using
+ Nokia Maps beta for Maemo

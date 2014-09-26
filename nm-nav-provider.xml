@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<node name="/com/nokia/maps/NavigationProvider">
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="LocationToAddresses">
+      <arg type="d" name="latitude" direction="in" />
+      <arg type="d" name="longitude" direction="in" />
+      <arg type="b" name="verbose" direction="in" />
+      <arg type="o" name="objectpath" direction="out" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="LocationToAddressesCached">
+      <arg type="d" name="latitude" direction="in" />
+      <arg type="d" name="longitude" direction="in" />
+      <arg type="d" name="tolerance" direction="in" />
+      <arg type="aas" name="addresses" direction="out" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="AddressToLocations">
+      <arg type="as" name="address" direction="in" />
+      <arg type="b" name="verbose" direction="in" />
+      <arg type="o" name="objectpath" direction="out" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="ShowRegion">
+      <arg type="d" name="nwlatitude" direction="in" />
+      <arg type="d" name="nwlongitude" direction="in" />
+      <arg type="d" name="selatitude" direction="in" />
+      <arg type="d" name="selongitude" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="ShowPlacesTopos">
+      <arg type="as" name="address" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="ShowPlaceGeo">
+      <arg type="d" name="latitude" direction="in" />
+      <arg type="d" name="longitude" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="ShowPlacesPOICategories">
+      <arg type="as" name="categories" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="ShowRoute">
+      <arg type="d" name="fromlatitude" direction="in" />
+      <arg type="d" name="fromlongitude" direction="in" />
+      <arg type="d" name="tolatitude" direction="in" />
+      <arg type="d" name="tolongitude" direction="in" />
+      <arg type="u" name="routeoptions" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="GetPOICategories">
+      <arg type="o" name="objectpath" direction="out" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="GetLocationFromMap">
+      <arg type="u" name="mapoptions" direction="in" />
+      <arg type="o" name="objectpath" direction="out" />
+    </method>
+  </interface>
+  <interface name="com.nokia.Navigation.MapProvider">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="navigation"/>
+    <method name="GetMapTile">
+      <arg type="d" name="latitude" direction="in" />
+      <arg type="d" name="longitude" direction="in" />
+      <arg type="i" name="zoom" direction="in" />
+      <arg type="i" name="width" direction="in" />
+      <arg type="i" name="height" direction="in" />
+      <arg type="u" name="mapoptions" direction="in" />
+      <arg type="o" name="objectpath" direction="out" />
+    </method>
+  </interface>
+</node>

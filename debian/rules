@@ -1,0 +1,55 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# export DH_VERBOSE=1
+
+CFLAGS = -Wall -g -Werror -Wno-unknown-pragmas
+
+DESTDIR = $(CURDIR)/debian/tmp
+
+# Use thumb mode if it enabled.
+ifneq (,$(findstring thumb,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -mthumb
+endif
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+build:
+	CFLAGS="$(CFLAGS)" $(MAKE)
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	mkdir -p debian/nokiamaps-navigation-provider
+
+	$(MAKE) DESTDIR=$(DESTDIR) install
+
+clean:
+	$(MAKE) clean
+	dh_testdir
+	dh_clean
+
+binary: build install
+	dh_testdir
+	dh_testroot
+	dh_install --sourcedir=debian/tmp
+	dh_installdocs -pnokiamaps-navigation-provider
+	dh_installchangelogs -pnokiamaps-navigation-provider
+	dh_compress
+	dh_fixperms
+	dh_strip --dbg-package=nokiamaps-navigation-provider-dbg
+	dh_makeshlibs
+	dh_shlibdeps
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+.PHONY: build clean binary install
+

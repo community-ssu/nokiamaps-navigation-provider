@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.nokia.Navigation.NokiaMapsProvider
+Exec=/usr/lib/nokiamaps-navigation-provider/nm-nav-provider
