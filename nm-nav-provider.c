@@ -779,7 +779,7 @@ static xmlDocPtr http_request_reply(const char *url)
   int len;
   char *content_type;
   xmlChar dest[1024];
-  g_message(url);
+
   content_type = NULL;
   xml_buf = xmlBufferCreate();
 
