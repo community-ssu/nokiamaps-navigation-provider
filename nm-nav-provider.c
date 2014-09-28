@@ -1326,6 +1326,12 @@ double x2long(double x, double n)
   return ((2 * x / n) - 1.0) * 180.0;
 }
 
+inline static int roundup256(int n)
+{
+ int r = n % 256;
+ return r ? n + 256 - r : n;
+}
+
 static void add_tile_to_list(NMProviderPrivate *priv, gchar *filename)
 {
   GSList *tile_list;
@@ -1411,17 +1417,16 @@ static void navigation_thread_func(NMProviderThreadData *thread_data,
       DBusMessageIter array;
 
       const double tilesize = 256.0;
-      double gridsizex = (tile_params->width / tilesize);
-      double gridsizey = (tile_params->height / tilesize);
       double size = pow(2, tile_params->zoom);
       double xia = (tile_params->width / 2) / tilesize;
       double yia = (tile_params->height / 2) / tilesize;
       double x = long2x(tile_params->longitude) * size;
       double y = lat2y(tile_params->latitude) * size;
       double xi, yi, xoff, yoff;
-
-      int wtmp = ((int)gridsizex + 1) * tilesize;
-      int htmp = ((int)gridsizey + 1) * tilesize;
+      int pixleft = ((x - xia) - (int)(x - xia)) * tilesize;
+      int pixtop = ((y - yia) - (int)(y - yia)) * tilesize;
+      int wtmp  = roundup256(pixleft + tile_params->width);
+      int htmp  = roundup256(pixtop + tile_params->height);
 
       gchar *tile_type;
       gchar *name_suffix;
@@ -1463,18 +1468,17 @@ static void navigation_thread_func(NMProviderThreadData *thread_data,
        */
       tmp_pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, wtmp, htmp);
       pixbuf = gdk_pixbuf_new_subpixbuf(tmp_pixbuf,
-                                        (wtmp - tile_params->width) / 2,
-                                        (htmp - tile_params->height) / 2,
+                                        pixleft,
+                                        pixtop,
                                         tile_params->width,
                                         tile_params->height);
 
-      for (xi = - xia, xoff = 0; xi <= gridsizex - xia; xi ++, xoff += tilesize)
+      for (xi = - xia, xoff = 0; xoff < wtmp; xi ++, xoff += tilesize)
       {
         if (!pixbuf)
           break;
 
-        for (yi = - yia, yoff = 0; yi <= gridsizey - yia; yi ++,
-            yoff += tilesize)
+        for (yi = - yia, yoff = 0; yoff < htmp; yi ++, yoff += tilesize)
         {
           time_t timer;
           struct stat st;
