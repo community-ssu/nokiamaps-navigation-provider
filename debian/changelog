@@ -1,3 +1,9 @@
+nokiamaps-navigation-provider (0.200-2+0m5) unstable; urgency=low
+
+  * Fix tile pixel coordinates calculation
+
+ -- Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>  Sun, 28 Sep 2014 17:03:11 +0300
+
 nokiamaps-navigation-provider (0.200-1+0m5) unstable; urgency=low
 
   * First FOSS release
